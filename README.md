@@ -6,9 +6,9 @@ This project provides a trading API that allows users to manage stocks, place or
 
 ## Features
 
-1. Stock Management**: Create and retrieve stocks.
-2. Order Management**: Place and retrieve orders.
-3. Bulk Trade Placement**: Import trades in bulk from a CSV file.
+1. **Stock Management**: Create and retrieve stocks.
+2. **Order Management**: Place and retrieve orders.
+3. **Bulk Trade Placement**: Import trades in bulk from a CSV file.
 
 ## Installation
 
