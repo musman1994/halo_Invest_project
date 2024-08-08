@@ -68,6 +68,33 @@ Follow these steps to set up and run the project on your local machine:
     ```bash
     python manage.py runserver
     ```
+   
+## Creating a Superuser
+
+To manage Django project via the admin interface, you'll need to create a superuser. There are two ways to do this:
+
+### 1. Using the Command Line
+
+You can create a superuser by running the following command:
+
+```bash
+python manage.py createsuperuser
+```
+
+This command will prompt you to enter a username, email, and password for the superuser. Once created, you'll be able to log in to the Django admin interface.
+
+### 2. Using the Admin Interface
+
+Alternatively, if you prefer to create a user via the admin interface, follow these steps:
+- Start your Django development server by running:
+```bash
+python manage.py runserver
+```
+- Open your browser and navigate to: http://127.0.0.1:8000/admin/
+
+- Log in using the superuser account you've created via the command line, or use another admin account if available.
+
+- Once logged in, navigate to the "Users" section and create a new user with admin rights by checking the "Staff status" and "Superuser status" options.
 
 ## API Endpoints
 

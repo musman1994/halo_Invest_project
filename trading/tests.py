@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-# Base URL of your Django API
+# Base URL of Django API
 BASE_URL = 'http://127.0.0.1:8000'
 
 

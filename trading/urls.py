@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import StockListCreateView, OrderListCreateView, UserStockValueView, LoginView, LogoutView, \
-    PlaceTradesInBulk
+from .views import StockListCreateView, OrderListCreateView, UserStockValueView,PlaceTradesInBulk
 
 urlpatterns = [
     path('stocks/', StockListCreateView.as_view(), name='stock_list_create'),
