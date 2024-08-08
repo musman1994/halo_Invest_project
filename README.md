@@ -21,9 +21,7 @@ This project provides a trading API that allows users to manage stocks, place or
 - Pytest
 - Postman
 
-# Halo Invest Project
-
-## Setup
+## Project Setup
 
 Follow these steps to set up and run the project on your local machine:
 
@@ -38,8 +36,9 @@ Follow these steps to set up and run the project on your local machine:
 
     ```bash
     python -m venv venv
-    source venv/bin/activate  # For macOS/Linux
-    # For Windows: venv\Scripts\activate
+    venv\Scripts\activate #For Windows
+     
+    # source venv/bin/activate  # For macOS/Linux
     ```
 
 3. **Install the required packages:**

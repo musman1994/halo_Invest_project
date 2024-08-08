@@ -18,35 +18,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 
 
-class LoginView(APIView):
-    def post(self, request):
-        username = request.data.get('username')
-        password = request.data.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            refresh = RefreshToken.for_user(user)
-            return Response({
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-            })
-        return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
-
-
-class LogoutView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
-
-    def post(self, request):
-        try:
-            refresh_token = request.data['refresh']
-            token = RefreshToken(refresh_token)
-            token.blacklist()
-            logout(request)
-            return Response(status=status.HTTP_205_RESET_CONTENT)
-        except Exception as e:
-            return Response({"detail": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST)
-
-
 class StockListCreateView(generics.ListCreateAPIView):
     queryset = Stock.objects.all()
     serializer_class = StockSerializer
@@ -71,7 +42,7 @@ class UserStockValueView(generics.GenericAPIView):
         total_investment = Order.objects.filter(
             user=user,
             stock=stock,
-            trade_type='sell'
+            trade_type='buy'
         ).aggregate(
             total=Sum(F('quantity') * F('stock__price'))
         )['total'] or 0
