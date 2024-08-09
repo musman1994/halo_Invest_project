@@ -5,10 +5,11 @@ from .models import Stock, Order
 class StockSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stock
-        fields = '__all__'
+        fields = ['id', 'name', 'price']
 
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = '__all__'
+        fields = ['id', 'user', 'stock', 'trade_type', 'quantity', 'timestamp']
+
